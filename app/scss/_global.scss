@@ -1,0 +1,243 @@
+* {
+   padding: 0px;
+   margin: 0px;
+   border: 0px;
+}
+*,
+*:before,
+*:after {
+   box-sizing: border-box;
+}
+:focus,
+:active {
+   outline: none;
+}
+a:focus,
+a:active {
+   outline: none;
+}
+aside,
+nav,
+footer,
+header,
+section {
+   display: block;
+}
+html,
+body {
+   height: 100%;
+}
+body {
+   line-height: 1;
+}
+
+input::-ms-clear {
+   display: none;
+}
+button {
+   cursor: pointer;
+}
+button::-moz-focus-inner {
+   padding: 0;
+   border: 0;
+}
+a,
+a:visited {
+   text-decoration: none;
+}
+a:hover {
+   text-decoration: none;
+}
+ul li {
+   list-style: none;
+}
+img {
+   vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-weight: inherit;
+   font-size: inherit;
+}
+
+.slick-slider {
+   position: relative;
+   .slick-track,
+   .slick-list {
+      transform: translate3d(0, 0, 0);
+   }
+   .slick-list {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+   }
+   .slick-track {
+      position: relative;
+      width: 100%;
+   }
+   .slick-slide {
+      position: relative;
+   }
+   .slick-arrow {
+      &.slick-prev {
+      }
+      &.slick-next {
+      }
+   }
+   .slick-dots {
+      li {
+         button {
+         }
+         &.slick-active {
+            button {
+            }
+         }
+      }
+   }
+}
+body {
+   position: relative;
+   font-family: "Bernard", serif;
+   min-width: 320px;
+   position: relative;
+   color: #000;
+   font-size: 18px;
+}
+// font-family: 'Abril Fatface', cursive;
+// font-family: 'Dancing Script', cursive;
+// font-family: 'Roboto', sans-serif;
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+   display: flex;
+   flex-direction: column;
+   min-height: 100%;
+   width: 100%;
+   overflow: hidden;
+}
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+.container {
+   max-width: 1230px;
+   width: 100%;
+   margin: 0 auto;
+   padding: 0 15px;
+}
+
+.content {
+   flex: 1 0 auto;
+}
+.footer {
+   flex: 0 0 auto;
+}
+
+.btn {
+   display: inline-block;
+   max-width: 216px;
+   width: 100%;
+   text-align: center;
+   padding: 20px 5px 20px 5px;
+   color: #ffffff;
+   font-size: 20px;
+   font-weight: 400;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+   border: 2px solid #ffff;
+   &--white {
+      max-width: 150px;
+      color: #fefefe;
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 4.32px;
+      padding: 14px 5px 15px 5px;
+   }
+   &--black {
+      max-width: 170px;
+      padding: 17px 5px 11px 5px;
+      border: 2px solid #000;
+      color: #000;
+   }
+   &--size-m {
+      max-width: 270px;
+   }
+}
+
+.title {
+   position: relative;
+   color: #000000;
+   font-size: 39px;
+   font-weight: 700;
+   line-height: 40px;
+   text-transform: uppercase;
+   letter-spacing: 9.36px;
+   padding-bottom: 15px;
+   text-align: center;
+   &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 111px;
+      height: 1px;
+      background-color: #000000;
+   }
+   &--size {
+      max-width: 542px;
+      margin: 0 auto;
+      color: #ffff;
+      &:after {
+         background-color: #ffffff;
+      }
+   }
+}
+
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+@mixin anim($time, $delay) {
+   transition: all $time ease $delay;
+}
+@mixin anim_cubic($time, $delay) {
+   transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
+}
+@mixin animate($name, $time, $infinite, $type) {
+   animation: $name $time + s $infinite $type;
+}
+@mixin rotate($deg) {
+   transform: rotate($deg);
+}
+@mixin scale($num) {
+   transform: scale($num);
+}
+@mixin skew($num) {
+   transform: skewX($num);
+}
+@mixin cnt($h) {
+   display: flex;
+   flex-direction: column;
+   height: $h;
+   text-align: center;
+   align-items: stretch;
+   justify-content: center;
+}
+@mixin tr($x, $y, $z) {
+   transform: translate3d($x, $y, $z);
+}
+@mixin flexbox() {
+   display: flex;
+   font-size: 0;
+}
+@mixin flexboxinline() {
+   display: inline-flex;
+}
+@mixin flexorder($val) {
+   order: $val;
+}
